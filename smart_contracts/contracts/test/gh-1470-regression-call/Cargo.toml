@@ -1,0 +1,20 @@
+[package]
+name = "gh-1470-regression-call"
+version = "0.1.0"
+authors = ["Michał Papierski <michal@casperlabs.io>"]
+edition = "2018"
+
+[[bin]]
+name = "gh_1470_regression_call"
+path = "src/bin/main.rs"
+bench = false
+doctest = false
+test = false
+
+[features]
+default = ["casper-contract/default", "gh-1470-regression/default"]
+
+[dependencies]
+casper-contract = { path = "../../../contract", default-features = false }
+casper-types = { path = "../../../../types" }
+gh-1470-regression = { path = "../gh-1470-regression", default-features = false }
